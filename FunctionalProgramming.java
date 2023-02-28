@@ -6,9 +6,42 @@ public class FunctionalProgramming {
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int x = Integer.parseInt(args[0]);
-        int y = Integer.parseInt(args[1]);
-        double distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-        System.out.println("Distance from (0, 0) to (" + x + ", " + y + ") is " + distance);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter value of a, b, c:");
+
+        System.out.println("Enter value of a:");
+        double a = sc.nextDouble();
+
+        System.out.println("Enter value of b:");
+        double b = sc.nextDouble();
+
+        System.out.println("Enter  value of c:");
+        double c = sc.nextDouble();
+        QuadraticEquation quadraticEquation = new QuadraticEquation();
+        quadraticEquation.checkRoots(a,b,c);
+
+    }
+    private void checkRoots(double a, double b,double c) {
+
+
+        //  formula
+        double delta = (b * b - 4 * a * c);
+
+        System.out.println("delta:" + delta);
+
+        if (delta >= 0) {
+            // check delta is greater or equal to  0
+
+            // two real and distinct roots
+            double firstRoot = (-b + Math.sqrt(delta)) / (2 * a);
+            double secondRoot = (-b - Math.sqrt(delta)) / (2 * a);
+
+            System.out.println("First root: " + firstRoot);
+            System.out.println("second root: " + secondRoot);
+        } else {
+            System.out.println("roots are not real ");
+
+        }
+
     }
 }
